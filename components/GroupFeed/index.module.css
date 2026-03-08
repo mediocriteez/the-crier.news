@@ -1,0 +1,26 @@
+.root{
+    position: relative;
+}
+
+.titleContainer{
+    position: sticky;
+    top: 0;
+    /* margin-bottom: 3px; */
+    width: 100%;
+    background: var(--background);
+    z-index: 2;
+}
+
+.title{
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-markazi-text);
+    font-size: 1.75em;
+    font-weight: 600;
+    color: var(--shadow);
+}
+
+.root li:first-child{
+    margin-top: 20px;
+}

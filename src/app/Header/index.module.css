@@ -1,0 +1,60 @@
+.root{
+    position: relative;
+    padding: 1em;
+}
+
+.logo{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    overflow: visible;
+
+    top: 2.15em;
+    left: calc(50% - 400px + 28px);
+    isolation: isolate;
+}
+
+.logo > svg{
+    height: 100%;
+    transform: translateX(-.125em);
+}
+
+.logo::after{
+    content: '';
+    display: block;
+    position: absolute;
+    inset: -14%;
+    background: var(--primary);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.title{
+    text-align: center;
+    font-size: 5.45em;
+    font-family: var(--font-manufacturing-consent);
+    color: var(--primary);
+}
+
+@media (max-width: 800px){
+    .logo{
+        position: absolute;
+        left: 1em;
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .title{
+        font-size: 4em;
+    }
+    
+}
+
+@media (max-width: 800px){
+    .logo > svg{
+        transform: translateX(-1px);
+    }
+    
+}

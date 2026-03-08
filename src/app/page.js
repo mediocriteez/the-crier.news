@@ -1,66 +1,128 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+
+import css from "./page.module.css";
+import GroupFeed from "@/components/GroupFeed";
+
+const articleData = {
+  'March 03, 2026': [
+    {
+      title: 'Financial Records Confirm NC Rep. Lindsay Graham Enlisted "Looks-Maxxer" Clavicular to Help Him Develop a Jawline',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'Financial Records Confirm NC Rep. Lindsay Graham Enlisted "Looks-Maxxer" Clavicular to Help Him Develop a Jawline',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+  ],
+  'Mar 02, 2026': [
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+  ],
+  'Mar 01, 2026': [
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+    {
+      title: 'A Name of a Totally Real Story',
+      image_url: 'https://d3i6fh83elv35t.cloudfront.net/static/2026/02/2026-02-28T131320Z_849607550_RC21VJA8EXBQ_RTRMADP_3_IRAN-CRISIS-BLAST-1024x683.jpg',
+      date_created: '10:00 pm',
+      page_url: '/'
+    },
+  ]
+}
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className={css.main}>
+      <GroupFeed articleData={articleData}/>
+    </main>
   );
 }

@@ -1,0 +1,11 @@
+.root{
+    width: 100%;
+}
+
+.root > li{
+    margin-bottom: 1rem;
+}
+
+.root > li:last-child{
+    margin-bottom: 0;
+}
