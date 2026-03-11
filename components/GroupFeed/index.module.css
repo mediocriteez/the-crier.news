@@ -4,6 +4,7 @@
 
 .titleContainer{
     position: sticky;
+    display: flow-root;
     top: 0;
     /* margin-bottom: 3px; */
     width: 100%;
