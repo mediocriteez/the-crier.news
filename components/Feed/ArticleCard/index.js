@@ -3,7 +3,7 @@ import css from './index.module.css'
 
 const ArticleCard = ({articleData, layout="compact"}) => {
     return(
-        <Link href={articleData?.page_url}>
+        <Link /*href={articleData?.page_url}*/ href="/article">
             <article data-layout={layout} className={css.root}>
                 <div className={css.descriptionContainer}>
                     <p className={css.title}>{articleData?.title}</p>

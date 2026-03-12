@@ -1,0 +1,68 @@
+.root{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.root > div{
+    padding: 2.5em 2.75em;
+}
+
+.title{
+    margin-bottom: .5em;
+    font-family: var(--font-manufacturing-consent);
+    font-size: 2.75em;
+    color: var(--foreground);
+    text-align: center;
+}
+
+.horizontal{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--primary);
+}
+
+.horizontal::before,
+.horizontal::after{
+    content: '';
+    position: absolute;
+    background: inherit;
+    width: .5em;
+    height: .5em;
+    top: 50%;
+    transform-origin: center;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.horizontal::before{
+    left: -.56em;
+}
+
+.horizontal::after{
+    right: -.56em;
+}
+
+.verticle{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: var(--primary);
+}
+
+.verticle::before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    width: .5em;
+    height: .5em;
+    left: 50%;
+    transform-origin: center;
+    transform: translateX(-50%) rotate(45deg);
+    top: -.56em;
+}

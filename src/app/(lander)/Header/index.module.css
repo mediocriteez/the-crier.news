@@ -34,6 +34,7 @@
 .title{
     text-align: center;
     font-size: 5.45em;
+    font-weight: 500;
     font-family: var(--font-manufacturing-consent);
     color: var(--primary);
 }

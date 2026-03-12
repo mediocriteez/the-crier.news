@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono, Manufacturing_Consent, Markazi_Text, Noto_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "./Header";
+import Header from "./(lander)/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +39,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${manufacturingConsent.variable} ${markaziText.variable} ${notoSans.variable}`}>
-        <Header />
         {children}
       </body>
     </html>

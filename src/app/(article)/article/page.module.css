@@ -1,0 +1,31 @@
+.root{
+    margin: 0 auto;
+    max-width: 506px;
+    padding-bottom: 500px;
+}
+
+.title{
+    font-family: var(--font-markazi-text);
+    font-size: 3em;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.root > img{
+    margin: 2em 0;
+    width: 100%;
+}
+
+.articleText{
+    font-family: var(--font-markazi-text);
+    font-size: 1.75em;
+    color: var(--foreground);
+}
+
+.gagText{
+    margin: .625em 0 .25em;
+    font-family: var(--font-manufacturing-consent);
+    font-size: 4.5em;
+    text-align: center;
+    color: var(--foreground);
+}
