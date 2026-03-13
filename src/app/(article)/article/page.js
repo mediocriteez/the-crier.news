@@ -16,9 +16,10 @@ const page = ({}) => {
             <h1 className={css.title}>{articleData.title}</h1>
             <img src={articleData.image_url} alt={articleData.title}/>
             <p className={css.articleText}>{articleData.text}</p>
-            <div>
+            <div className={css.gagBox}>
                 <p className={css.gagText}>Just Kidding!</p>
                 <SocialLinks />
+                <img className={css.laughingEmoji} src="/laughing_emoji.png" alt="laughing emoji"/>
             </div>
         </main>
     )
