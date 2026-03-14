@@ -1,3 +1,4 @@
+import DonateForm from './DonateForm'
 import css from './page.module.css'
 import SocialLinks from './SocialLinks'
 
@@ -21,6 +22,7 @@ const page = ({}) => {
                 <SocialLinks />
                 <img className={css.laughingEmoji} src="/laughing_emoji.png" alt="laughing emoji"/>
             </div>
+            <DonateForm />
         </main>
     )
 }

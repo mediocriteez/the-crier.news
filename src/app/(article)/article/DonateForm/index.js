@@ -1,23 +1,45 @@
-import { useCallback, useState } from 'react'
+"use client"
+
+import { useCallback, useMemo, useRef, useState } from 'react'
 import css from './index.module.css'
 
-const DonateCard = ({}) => {
+const DonateForm = ({}) => {
 
-    const [donationAmount, setDonationAmount] = useState(1)
-    const [donationCustomAmount, setDonationCustomAmount] = useState('')
-    const [isCustom, setIsCustom] = useState(false)
+    const [donationAmount, setDonationAmount] = useState('1')
+    const [customDonationAmount, setCustomDonationAmount] = useState('')
 
     const onSubmit = e => {
         e.preventDefault()
     }
 
     const radioOnInput = useCallback(e => {
-        setDonationAmount((parseInt(e.currentTarget.value)))
-        setDonationCustomAmount('')
+        setDonationAmount(e.currentTarget.value)
     }, [])
 
     const inputOnChange = useCallback(e => {
-        setDonationCustomAmount(e.currentTarget.value)
+        const {value} = e.currentTarget
+        const [int, frac] = value.split('.')
+
+        let setValue
+        if(frac == undefined){
+            setValue = int
+        }else{
+            setValue = `${int}.${frac.slice(0, 2)}`
+        }
+
+        setCustomDonationAmount(setValue)
+    }, [])
+
+    const inputOnFocus = useCallback(e => {
+        setDonationAmount('CUSTOM')
+    }, [donationAmount])
+
+    const inputOnBlur = useCallback(e => {
+        const {currentTarget:input} = e
+
+        if(input.value === '') return
+
+        setCustomDonationAmount(parseFloat(input.value).toFixed(2))
     }, [])
 
     return(
@@ -27,16 +49,30 @@ const DonateCard = ({}) => {
                 {
                     [1, 5, 10].map(v => {
                         return(
-                            <label>
+                            <label key={v} data-selected={`${v}` === donationAmount}>
                                 ${v}
-                                <input type="radio" name="donation_amount" value={v} checked={donationCustomAmount === undefined && v === donationAmount} onInput={radioOnInput}/>
+                                <input 
+                                    type="radio" 
+                                    name="donation_amount" 
+                                    value={v} 
+                                    checked={`${v}` === donationAmount} 
+                                    onChange={radioOnInput}
+                                />
                             </label>
                         )
                     })
                 }
-                <label data-custom={isCustom}>
+                <label data-selected={donationAmount === 'CUSTOM'}>
                     $
-                    <input type="text" name="donation_amount_custom" value={donationCustomAmount} placeholder="Other" onChange={inputOnChange}/>
+                    <input 
+                        type="number" 
+                        name="donation_amount_custom"
+                        value={customDonationAmount} 
+                        placeholder="Other" 
+                        onChange={inputOnChange}
+                        onFocus={inputOnFocus}
+                        onBlur={inputOnBlur}
+                    />
                 </label>
                 <button type="submit">Checkout</button>
             </form>
@@ -44,4 +80,4 @@ const DonateCard = ({}) => {
     )
 }
 
-export default DonateCard
+export default DonateForm

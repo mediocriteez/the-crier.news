@@ -1,0 +1,80 @@
+.root{
+    margin: 0 auto;
+    max-width: 20em;
+}
+
+.root > h2{
+    margin-bottom: .5em;
+    font-family: var(--font-manufacturing-consent);
+    font-weight: 500;
+    font-size: 2.75em;
+    color: var(--foreground);
+    text-align: center;
+}
+
+.root form{
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(3, 3.75em) 1fr;
+    grid-template-rows: repeat(2, 3.75em);
+    min-width: 0;
+}
+
+.root form button{
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    width: 100%;
+
+    font-weight: 500;
+}
+
+.root form label,
+.root form button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary);
+    font-size: 2em;
+    font-family: var(--font-manufacturing-consent);
+    color: var(--primary);
+    cursor: pointer;
+    min-width: 0;
+}
+
+.root form label[data-selected="true"],
+.root form button{
+    background: var(--primary);
+    color: var(--background);
+}
+
+.root input[type="radio"]{
+    position: absolute;
+    inset: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.root input[type="number"]{
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: .15em;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    /* field-sizing: content; */
+    width: calc(100% - 1.5em);    
+}
+
+.root input[type="number"]::placeholder{
+    color: inherit;
+}
+
+.root input[type="number"]:focus::placeholder{
+    color: transparent;
+}
