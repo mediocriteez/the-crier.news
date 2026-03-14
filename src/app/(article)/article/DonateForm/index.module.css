@@ -4,6 +4,7 @@
 }
 
 .root > h2{
+    margin-top: .25em;
     margin-bottom: .5em;
     font-family: var(--font-manufacturing-consent);
     font-weight: 500;
