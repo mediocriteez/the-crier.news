@@ -15,7 +15,7 @@
 
 .root form{
     display: grid;
-    gap: 2px;
+    gap: 4px;
     grid-template-columns: repeat(3, 3.75em) 1fr;
     grid-template-rows: repeat(2, 3.75em);
     min-width: 0;
