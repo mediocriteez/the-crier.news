@@ -1,5 +1,4 @@
 .root{
-    position: sticky;
     padding: 1em;
     background: var(--background);
 }
