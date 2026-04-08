@@ -1,10 +1,13 @@
+import { Suspense } from "react";
 import Header from "./Header";
 
 export default function RootLayout({ children }) {
   return (
     <>
         <Header />
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
     </>
   );
 }

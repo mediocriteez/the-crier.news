@@ -4,7 +4,7 @@ import DonateForm from './DonateForm'
 import SocialLinks from './SocialLinks'
 import css from './page.module.css'
 
-const fetchArticleData = async () => {
+const fetchArticleData = async (articleID) => {
     'use cache'
     try {
         const {data, error} = await supabase.from('article').select().eq('id', articleID)
@@ -21,7 +21,7 @@ const page = async ({params}) => {
     const articleID = await params.then(r => r.articleID[0])
     console.log(articleID)
 
-    const articleData = await fetchArticleData()
+    const articleData = await fetchArticleData(articleID)
 
     return(
         <main className={css.root}>
