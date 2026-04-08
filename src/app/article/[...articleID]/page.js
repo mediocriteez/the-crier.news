@@ -4,21 +4,24 @@ import DonateForm from './DonateForm'
 import SocialLinks from './SocialLinks'
 import css from './page.module.css'
 
-const page = async ({params}) => {
-    const articleID = await params.then(r => r.articleID[0])
-    console.log(articleID)
-    let articleData
-    let contentError = null
-
+const fetchArticleData = async () => {
+    'use cache'
     try {
         const {data, error} = await supabase.from('article').select().eq('id', articleID)
         if(error) throw error
         if(data.length < 1) throw {message: 'content not found!'}
-        articleData = data?.[0]
+        return data[0]
     } catch (error) {
         console.error(error)
         notFound()
     }
+}
+
+const page = async ({params}) => {
+    const articleID = await params.then(r => r.articleID[0])
+    console.log(articleID)
+
+    const articleData = await fetchArticleData()
 
     return(
         <main className={css.root}>
