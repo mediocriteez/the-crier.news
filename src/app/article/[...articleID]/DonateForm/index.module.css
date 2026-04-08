@@ -36,12 +36,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--primary);
+    border: 1px solid transparent;
     font-size: 2em;
     font-family: var(--font-manufacturing-consent);
     color: var(--primary);
     cursor: pointer;
     min-width: 0;
+}
+
+.root form label:hover,
+.root form button:hover{
+    border: 1px solid var(--primary);
 }
 
 .root form label[data-selected="true"],
