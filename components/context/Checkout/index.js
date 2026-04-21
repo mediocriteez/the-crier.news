@@ -6,11 +6,9 @@ const CheckoutContext = createContext()
 
 const CheckoutContextProvider = ({children}) => {
 
-    
-
     return(
         <CheckoutContext.Provider value={{}} >
-
+            {children}
         </CheckoutContext.Provider>
     )
 }
