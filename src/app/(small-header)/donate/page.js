@@ -55,7 +55,9 @@ const Donate = () => {
                 </div>
                 <FormTextInput labelText="E-mail Address" name="email" value={donatorData} setValue={setDonatorData} type="email"/>
                 <FormTextInput labelText="Phone Number" name="phone" value={donatorData} setValue={setDonatorData}/>
-
+                <div>
+                    
+                </div>
             </form>
         </main>
     )
