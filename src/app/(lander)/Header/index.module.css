@@ -26,7 +26,8 @@
     display: block;
     position: absolute;
     inset: -14%;
-    background: var(--primary);
+    /* background: var(--primary); */
+    background: transparent;
     border-radius: 50%;
     z-index: -1;
 }

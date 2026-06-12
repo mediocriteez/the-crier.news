@@ -2,15 +2,25 @@
 
 import { useCallback, useMemo, useRef, useState } from 'react'
 import css from './index.module.css'
+import { useCheckoutContext } from '@/components/context/Checkout'
+import { usePathname, useRouter } from 'next/navigation'
 
 const DonateForm = ({}) => {
 
+    const {normalizeDonationAmount, setReturnTo} = useCheckoutContext()
     const [donationAmount, setDonationAmount] = useState('1')
     const [customDonationAmount, setCustomDonationAmount] = useState('')
+    
+    const router = useRouter()
+    const pathName = usePathname()
 
-    const onSubmit = e => {
+    const onSubmit = useCallback(e => {
         e.preventDefault()
-    }
+        const amount = donationAmount === 'CUSTOM' ? customDonationAmount : donationAmount
+        normalizeDonationAmount(amount)
+        router.push('/donate')
+        setReturnTo(pathName)
+    }, [donationAmount, customDonationAmount])
 
     const radioOnInput = useCallback(e => {
         setDonationAmount(e.currentTarget.value)

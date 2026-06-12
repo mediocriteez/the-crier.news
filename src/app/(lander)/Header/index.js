@@ -6,7 +6,7 @@ const Header = ({}) => {
     return(
         <header className={css.root}>
             <Link href="/" className={css.logo}>
-                <LogoSVG />
+                <LogoSVG fill={'#171768'}/>
             </Link>
             <h1 className={css.title}>The Crier</h1>
         </header>

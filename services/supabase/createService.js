@@ -1,11 +1,11 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-const supabasePublishableKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+const supabasePrivateKey = process.env.SUPABASE_PRIVATE_KEY
 
 // Safety check to ensure env variables are loaded
-if (!supabaseUrl || !supabasePublishableKey) {
+if (!supabaseUrl || !supabasePrivateKey) {
   throw new Error('Missing Supabase Environment Variables')
 }
 
-export const supabase = createClient(supabaseUrl, supabasePublishableKey)
+export const supabaseService = createClient(supabaseUrl, supabasePrivateKey)
