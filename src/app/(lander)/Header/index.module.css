@@ -7,12 +7,12 @@
     position: fixed;
     display: grid;
     place-items: center;
-    width: 95px;
-    height: 95px;
+    width: 90px;
+    height: 90px;
     overflow: visible;
 
-    top: 1.25em;
-    left: calc(50% - 400px);
+    top: 1.35em;
+    left: calc(50% - 400px + 28);
     isolation: isolate;
 }
 
@@ -41,11 +41,19 @@
 }
 
 @media (max-width: 800px){
+    .root{
+        display: grid;
+        grid-template-columns: 4em 1fr 4em;
+        grid-template-rows: min-content;
+        justify-items: center;
+        align-items: center;
+    }
+
     .logo{
-        position: absolute;
+        position: static;
         left: 1em;
-        width: 2.5em;
-        height: 2.5em;
+        width: 4em;
+        height: 4em;
     }
 
     .title{
