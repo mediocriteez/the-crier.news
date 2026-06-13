@@ -35,8 +35,8 @@ function PaymentForm({}) {
 
     setIsLoading(true);
 
-    let return_url = `${process.env.NEXT_PUBLIC_ROOT_URL}/donate/thank-you!?`
-    if(resizeTo !== null) return_url +=`pushhistory=true&returnto=${returnTo}`
+    let return_url = `${process.env.NEXT_PUBLIC_ROOT_URL}/donate/thank-you!`
+    if(resizeTo !== null) return_url +=`?pushhistory=true&returnto=${returnTo}`
 
     const { error } = await stripe.confirmPayment({
       elements,

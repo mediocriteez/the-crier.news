@@ -7,12 +7,12 @@
     position: fixed;
     display: grid;
     place-items: center;
-    width: 70px;
-    height: 70px;
+    width: 95px;
+    height: 95px;
     overflow: visible;
 
-    top: 2.15em;
-    left: calc(50% - 400px + 28px);
+    top: 1.25em;
+    left: calc(50% - 400px);
     isolation: isolate;
 }
 

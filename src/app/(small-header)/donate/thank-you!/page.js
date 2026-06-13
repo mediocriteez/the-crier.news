@@ -17,7 +17,6 @@ const Page = ({}) => {
         if(returnTo === null || returnTo === '' || !searchParams.get('pushhistory')) return
 
         window.history.pushState({}, '', returnTo);
-        const params = new URLSearchParams(searchParams.toString())
     }, [])
 
     return(
