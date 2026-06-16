@@ -1,3 +1,5 @@
+import css from './index.module.css'
+
 const TextInput = ({name, value, setValue, type="text", ...props}) => {
 
     const onChange = e => {
@@ -6,7 +8,7 @@ const TextInput = ({name, value, setValue, type="text", ...props}) => {
     }
 
     return(
-        <input type={type} name={name} value={value} onChange={onChange} {...props}/>
+        <input type={type} name={name} value={value} onChange={onChange} className={css.root} {...props}/>
     )
 }
 

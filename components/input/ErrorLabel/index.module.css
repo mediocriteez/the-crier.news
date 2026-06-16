@@ -1,0 +1,34 @@
+.root[data-theme="standard"]{
+    display: inline-grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+
+    margin: .5em 0;
+    border: 3px solid var(--primary);
+
+}
+
+.root[data-theme="standard"] > span:first-child{
+    padding: .25em .5em;
+    background: var(--primary);
+    color: var(--background);
+    /* font-family: var(--font-markazi-text); */
+    font-family: var(--font-noto-sans);
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.root[data-theme="standard"] > input{
+    padding: .1em .4em;
+    color: var(--shadow);
+    font-size: 3em;
+    /* font-family: var(--font-noto-sans); */
+    font-family: var(--font-markazi-text);
+    font-weight: 500;
+
+}
+
+.root[data-sizing="full-width"]{
+    width: 100%;
+}

@@ -1,6 +1,8 @@
+import css from './index.module.css'
+
 const ErrorLabel = ({text, error, children, ...props}) => {
     return(
-        <label {...props}>
+        <label {...props} className={css.root}>
             {text &&
                 <span>{text}</span>
             }

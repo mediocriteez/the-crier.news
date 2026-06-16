@@ -9,6 +9,8 @@ import CountryCodeSelect from "./CountryCodeSelect"
 import ErrorLabel from "@/components/input/ErrorLabel"
 import StripeForm from "./StripeForm"
 
+import css from './index.module.css'
+
 
 
 const DonateForm = ({step}) => {
@@ -38,7 +40,7 @@ const DonateForm = ({step}) => {
     }, [updateDonationAmount])
 
     return(
-        <main>
+        <main className={css.root}>
             <h1>Checkout</h1>
             <form>  
                 <ErrorLabel error={donationError}>
@@ -59,25 +61,25 @@ const DonateForm = ({step}) => {
             <p>* the-crier.news is a hobby project and not a non-profit organization. Your donation is not tax deductible.</p>
             <form>
                 <fieldset disabled={step !== 1}>
-                    <div>
-                        <ErrorLabel text={"First Name*"} error={donatorDataErrors?.first_name}>
-                            <FormTextInput name="first_name" value={donatorData} setValue={setDonatorData}  />
+                    <div className={css.flex}>
+                        <ErrorLabel text={"First Name*"} error={donatorDataErrors?.first_name} data-theme="standard" data-sizing="full-width">
+                            <FormTextInput name="first_name" value={donatorData} setValue={setDonatorData}  data-theme="standard"/>
                         </ErrorLabel>
-                        <ErrorLabel text={"Last Name*"} error={donatorDataErrors?.last_name}>
-                            <FormTextInput name="last_name" value={donatorData} setValue={setDonatorData}  />
-                        </ErrorLabel>
-                    </div>
-                    <div>
-                        <ErrorLabel text={"E-mail Address*"} error={donatorDataErrors?.email}>
-                            <FormTextInput name="email" value={donatorData} setValue={setDonatorData} type="email"/>
+                        <ErrorLabel text={"Last Name*"} error={donatorDataErrors?.last_name} data-theme="standard" data-sizing="full-width">
+                            <FormTextInput name="last_name" value={donatorData} setValue={setDonatorData}  data-theme="standard"/>
                         </ErrorLabel>
                     </div>
                     <div>
-                        <ErrorLabel text={"Country Code"}>
-                            <CountryCodeSelect name="phone_country_code" value={donatorData} setValue={setDonatorData} />
+                        <ErrorLabel text={"E-mail Address*"} error={donatorDataErrors?.email} data-theme="standard" data-sizing="full-width">
+                            <FormTextInput name="email" value={donatorData} setValue={setDonatorData} type="email" data-theme="standard"/>
                         </ErrorLabel>
-                        <ErrorLabel text={"Phone Number"} error={donatorDataErrors?.phone}>
-                            <FormTextInput name="phone" value={donatorData} setValue={setDonatorData}/>
+                    </div>
+                    <div className={css.flex} style={{justifyContent: 'center'}}>
+                        <ErrorLabel text={"Country"} data-theme="standard">
+                            <CountryCodeSelect name="phone_country_code" value={donatorData} setValue={setDonatorData} data-theme="standard"/>
+                        </ErrorLabel>
+                        <ErrorLabel text={"Phone Number"} error={donatorDataErrors?.phone} data-theme="standard">
+                            <FormTextInput name="phone" value={donatorData} setValue={setDonatorData} data-theme="standard"/>
                         </ErrorLabel>
                     </div>
                     <div>

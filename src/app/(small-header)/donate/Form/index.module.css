@@ -1,0 +1,9 @@
+.root fieldset{
+    border: none;
+    padding: 0;
+}
+
+.flex{
+    display: flex;
+    gap: .5em;
+}
